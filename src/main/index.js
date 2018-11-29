@@ -22,10 +22,12 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: 400,
     useContentSize: true,
-    width: 600
+    width: 400
   })
 
   mainWindow.loadURL(winURL)
+
+  mainWindow.setMenu(null);
 
   mainWindow.on('closed', () => {
     mainWindow = null
