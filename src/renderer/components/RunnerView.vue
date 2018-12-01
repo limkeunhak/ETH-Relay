@@ -17,9 +17,9 @@
 </template>
 
 <script>
-import relay from '../../relay/relay';
+  import relay from '../../relay/relay';
 
-export default {
+  export default {
     data () {
       return {
         blockInfo: ''
@@ -37,7 +37,7 @@ export default {
         });
       }
     }
-}
+  }
 </script>
 
 <style scoped>
@@ -45,29 +45,5 @@ export default {
     margin-left: auto;
     margin-right: auto;
     display: block;
-  }
-</style>
-<style scoped>
-  .item
-  {
-    text-align: center;
-  }
-
-  .name
-  {
-    display: inline;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
-
-  .value
-  {
-    display: inline;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 18px;
-    padding-left: 5px;
   }
 </style>
