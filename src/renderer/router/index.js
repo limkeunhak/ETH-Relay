@@ -8,12 +8,12 @@ export default new Router({
     {
       path: '/',
       name: 'welcome-view',
-      component: require('@/components/WelcomeView').default
+      component: require('@/components/FrontView').default
     },
     {
-      path: '/inspire',
-      name: 'inspire',
-      component: require('@/components/InspireView').default
+      path: '/test',
+      name: 'test-page',
+      component: require('@/components/TestView').default
     },
     {
       path: '*',

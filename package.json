@@ -1,5 +1,5 @@
 {
-  "name": "elecapp",
+  "name": "eth-relay",
   "version": "0.0.0",
   "author": "",
   "description": "An electron-vue project",
@@ -21,7 +21,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "elecapp",
+    "productName": "ETH Relay",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"

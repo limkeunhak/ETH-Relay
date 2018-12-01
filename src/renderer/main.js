@@ -13,9 +13,9 @@ Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
 // axios.defaults.baseURL = 'http://192.168.219.187:8485';
-// axios.defaults.baseURL = 'http://49.164.52.128:8485';
-axios.defaults.baseURL = 'http://127.0.0.1:8545';
-console.log(axios.defaults.baseURL);
+axios.defaults.baseURL = 'http://49.164.52.128:8485';
+// axios.defaults.baseURL = 'http://127.0.0.1:8545';
+// console.log(axios.defaults.baseURL);
 /* eslint-disable no-new */
 new Vue({
   components: { App },

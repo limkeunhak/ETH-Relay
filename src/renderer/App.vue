@@ -1,21 +1,25 @@
 <template>
   <div id="app">
     <v-app light>
-      <v-toolbar fixed app :clipped-left="clipped">
-        <v-btn 
+      <v-toolbar fixed app>
+        <v-toolbar-title class="subheading" v-text="title" to="/"></v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn
           icon
-          @click.native.stop="miniVariant = !miniVariant"
+          to="/test"
         >
-          <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'"></v-icon>
+          <v-icon>router</v-icon>
         </v-btn>
         <v-btn
           icon
-          @click.native.stop="clipped = !clipped"
         >
-          <v-icon>web</v-icon>
+          <v-icon>account_circle</v-icon>
         </v-btn>
-        <v-toolbar-title class="subheading" v-text="title"></v-toolbar-title>
-        <v-spacer></v-spacer>
+        <v-btn
+          icon
+        >
+          <v-icon>help</v-icon>
+        </v-btn>
       </v-toolbar>
       <v-content>
         <v-container fluid fill-height>
@@ -27,6 +31,7 @@
       <v-footer :fixed="fixed" app>
         <v-spacer></v-spacer>
         <span>&copy; 2018 EOSYS. All Right Reserved</span>
+        <v-spacer></v-spacer>
       </v-footer>
     </v-app>
   </div>
@@ -34,17 +39,9 @@
 
 <script>
   export default {
-    name: 'elecapp',
+    name: 'ETH-Relay',
     data: () => ({
-      clipped: false,
-      drawer: false,
       fixed: false,
-      items: [
-        { icon: 'apps', title: 'Welcome', to: '/' },
-        { icon: 'bubble_chart', title: 'Inspire', to: '/inspire' }
-      ],
-      miniVariant: false,
-      right: true,
       title: 'ETH Relay'
     })
   }

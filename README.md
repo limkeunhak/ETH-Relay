@@ -1,4 +1,4 @@
-# elecapp
+# eth-relay
 
 > An electron-vue project
 

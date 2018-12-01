@@ -22,7 +22,7 @@
 </template>
 
 <script>
-  import SystemInformation from './WelcomeView/SystemInformation'
+  import SystemInformation from './Sysinfo/SystemInformation'
 
   export default {
     name: 'welcome',

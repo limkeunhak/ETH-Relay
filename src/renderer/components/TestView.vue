@@ -8,7 +8,7 @@
         <footer>
           <small>
             <em>&mdash;John Johnson</em>
-            <v-btn color="info" @click="getData">검색</v-btn>
+            <v-btn color="info">검색</v-btn>
             <em>&mdash;{{ blockInfo }}</em>
           </small>
         </footer>
@@ -40,6 +40,7 @@ export default {
               'Content-Type': 'application/json'
           }
         }).then((result) => {
+            console.log(result);
             that.blockInfo = result.data;
           }).catch((ex) => {
             that.blockInfo = ex;
