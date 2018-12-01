@@ -37,9 +37,4 @@
   {
     max-width: 100%;
   }
-
-  .link-btn
-  {
-    width: 150px;
-  }
 </style>

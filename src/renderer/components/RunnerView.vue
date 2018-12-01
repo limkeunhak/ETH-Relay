@@ -39,11 +39,3 @@
     }
   }
 </script>
-
-<style scoped>
-  img {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-</style>
