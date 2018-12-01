@@ -1,6 +1,6 @@
-const Relay = require('./relay');
+import relay from './relay';
 
-let relay = Relay();
+// let relay = Relay();
 // above code will be changed to "let relay = Relay(options)"
 // settings...
 

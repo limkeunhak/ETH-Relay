@@ -2,7 +2,7 @@ const axios = require('axios');
 const utils = require('./utils');
 const config = require('../config/app.config');
 
-module.exports = () => {
+export default (() => {
     return {
         isRunning: false,
         getBlockNumber: function () {
@@ -11,10 +11,12 @@ module.exports = () => {
         },
         getLastBlockNumber: function () {
             // TODO: eos에서 저장한 마지막 블록 번호를 반환
+            const url = utils.createApiPath('eth_blockNumber');
+            return axios.post(url);
         },
         getBlockByNumber: function (number) {
             let param = utils.toHexNumber(number);
-            if(isNaN(param)){
+            if (isNaN(param)) {
                 return;
             }
 
@@ -23,7 +25,7 @@ module.exports = () => {
         },
         getBlockTransactionCountByNumber: function (number) {
             let param = utils.toHexNumber(number);
-            if(isNaN(param)){
+            if (isNaN(param)) {
                 return;
             }
 
@@ -48,19 +50,20 @@ module.exports = () => {
         },
         fetchAndSet: function () {
             // TODO: ethereum에서 정보를 받아 eos에 저장
+            console.log('fetch and set');
         },
         setIsRunning: function (isRunning) {
             this.isRunning = isRunning;
         },
         sleep: function (ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
-        },        
+        },
         runRelay: async function () {
             this.isRunning = true;
             const that = this;
             // config check
-            if(!config) return;
-            
+            if (!config) return;
+
             while (true) {
                 // check flag
                 if (!that.isRunning) break;
@@ -70,4 +73,4 @@ module.exports = () => {
             }
         }
     }
-}
+})()

@@ -10,12 +10,12 @@ module.exports = {
         let query = {
             module: 'proxy',
             action: action,
-            apikey: config.apiKey,
+            apikey: config.apiKey
         };
-        
+
         // add params into query
-        if(params){
-            query = Object.assign(query, params);
+        if (params) {
+            // query = Object.assign(query, params);
         }
 
         return config.baseURL + '?' + queryString.stringify(query);
@@ -24,5 +24,5 @@ module.exports = {
         // TODO: convert num to hex
         // if num is nan, return nan;
         return num;
-    } 
+    }
 }
