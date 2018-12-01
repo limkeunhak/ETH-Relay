@@ -1,7 +1,6 @@
 <template>
   <v-layout column justify-center>
     <v-flex>
-      <img src="/static/v.png" alt="Vuetify.js" class="mb-5" />
       <v-btn color="info" small @click="getBlockNumber">블록번호 가져오기</v-btn>
       <blockquote class="text-xs-center">
         &#8220;First, solve the problem. Then, write the code.&#8221;

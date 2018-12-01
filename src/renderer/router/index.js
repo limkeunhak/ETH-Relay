@@ -11,9 +11,14 @@ export default new Router({
       component: require('@/components/FrontView').default
     },
     {
-      path: '/test',
-      name: 'test-page',
-      component: require('@/components/TestView').default
+      path: '/runner',
+      name: 'runner-page',
+      component: require('@/components/RunnerView').default
+    },
+    {
+      path: '/settings',
+      name: 'setting-page',
+      component: require('@/components/SettingView').default
     },
     {
       path: '*',

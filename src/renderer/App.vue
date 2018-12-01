@@ -6,14 +6,21 @@
         <v-spacer></v-spacer>
         <v-btn
           icon
-          to="/test"
+          to="/"
+        >
+          <v-icon>home</v-icon>
+        </v-btn>
+        <v-btn
+          icon
+          to="/runner"
         >
           <v-icon>router</v-icon>
         </v-btn>
         <v-btn
           icon
+          to="/settings"
         >
-          <v-icon>account_circle</v-icon>
+          <v-icon>settings</v-icon>
         </v-btn>
         <v-btn
           icon
@@ -30,7 +37,7 @@
       </v-content>
       <v-footer :fixed="fixed" app>
         <v-spacer></v-spacer>
-        <span>&copy; 2018 EOSYS. All Right Reserved</span>
+        <span class="caption">&copy; 2018 Team KEOS. All Right Reserved</span>
         <v-spacer></v-spacer>
       </v-footer>
     </v-app>
@@ -39,7 +46,7 @@
 
 <script>
   export default {
-    name: 'ETH-Relay',
+    name: 'eth-relay',
     data: () => ({
       fixed: false,
       title: 'ETH Relay'
@@ -50,4 +57,5 @@
 <style>
   @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons');
   /* Global CSS */
+  ::-webkit-scrollbar { display: none; } 
 </style>
