@@ -1,7 +1,7 @@
 const Relay = require('./relay');
 
-let relay = new Relay();
-
+let relay = Relay();
+// above code will be changed to "let relay = Relay(options)"
 // settings...
 
 relay.runRelay();
