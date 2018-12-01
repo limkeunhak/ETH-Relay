@@ -20,8 +20,9 @@ module.exports = {
 
         return config.baseURL + '?' + queryString.stringify(query);
     },
-    toHex: (num) => {
-        // convert num to hex
+    toHexNumber: (num) => {
+        // TODO: convert num to hex
+        // if num is nan, return nan;
         return num;
     } 
 }
