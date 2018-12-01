@@ -12,10 +12,8 @@ if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
-// axios.defaults.baseURL = 'http://192.168.219.187:8485';
-axios.defaults.baseURL = 'http://49.164.52.128:8485';
-// axios.defaults.baseURL = 'http://127.0.0.1:8545';
-// console.log(axios.defaults.baseURL);
+axios.defaults.baseURL = 'https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=K15398ADXCWIJRDZAMVFYV3BI6919HQDQC';
+
 /* eslint-disable no-new */
 new Vue({
   components: { App },
