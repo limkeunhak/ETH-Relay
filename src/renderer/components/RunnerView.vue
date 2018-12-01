@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import relay from '../../relay/relay';
 
 export default {
     data () {
@@ -29,30 +29,45 @@ export default {
       getBlockNumber () {
         let that = this;
         this.blockInfo = '검색중..';
-        axios.post('/', {
-          'jsonrpc': '2.0',
-          'method': 'eth_blockNumber',
-          'params': [],
-          'id': 10
-        }, {
-          headers: {
-              'Content-Type': 'application/json'
-          }
-        }).then((result) => {
-            console.log(result);
-            that.blockInfo = result.data;
-          }).catch((ex) => {
+        relay.getLastBlockNumber()
+        .then((result) => {
+             that.blockInfo = result.data;
+        }).catch((ex) => {
             that.blockInfo = ex;
-          })
+        });
       }
-
     }
 }
 </script>
+
 <style scoped>
   img {
     margin-left: auto;
     margin-right: auto;
     display: block;
+  }
+</style>
+<style scoped>
+  .item
+  {
+    text-align: center;
+  }
+
+  .name
+  {
+    display: inline;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .value
+  {
+    display: inline;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    padding-left: 5px;
   }
 </style>

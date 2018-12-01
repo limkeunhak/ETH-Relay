@@ -1,17 +1,14 @@
 <template>
   <v-layout row wrap justify-center id="wrapper">
     <v-flex xs12>
-      <system-information></system-information>
+      <label>세팅 페이지</label>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
-  import SystemInformation from './Sysinfo/SystemInformation'
-
   export default {
     name: 'settings',
-    components: { SystemInformation },
     methods: {
       open (link) {
         this.$electron.shell.openExternal(link)

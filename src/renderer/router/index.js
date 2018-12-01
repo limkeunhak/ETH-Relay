@@ -21,6 +21,11 @@ export default new Router({
       component: require('@/components/SettingView').default
     },
     {
+      path: '/sysinfo',
+      name: 'info-page',
+      component: require('@/components/InfoView').default
+    },
+    {
       path: '*',
       redirect: '/'
     }

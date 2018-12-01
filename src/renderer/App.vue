@@ -24,6 +24,7 @@
         </v-btn>
         <v-btn
           icon
+          to="/sysinfo"
         >
           <v-icon>help</v-icon>
         </v-btn>
