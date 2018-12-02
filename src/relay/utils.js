@@ -15,14 +15,16 @@ module.exports = {
 
         // add params into query
         if (params) {
-            // query = Object.assign(query, params);
+            query = Object.assign(query, params);
         }
 
         return config.baseURL + '?' + queryString.stringify(query);
     },
-    toHexNumber: (num) => {
-        // TODO: convert num to hex
-        // if num is nan, return nan;
-        return num;
+    toHexNumber: (number) => {
+        if(isNaN(number) || number <= 0){
+            return '0x0';
+        }
+
+        return number.toString(16).toUpperCase();
     }
 }

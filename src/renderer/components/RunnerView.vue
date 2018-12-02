@@ -1,8 +1,15 @@
 <template>
   <v-layout row wrap class="centered">
-    <label>{{ processingMsg }}</label>
-    <v-btn color="info" small @click="runRelay" :disabled="disabled">Run relay</v-btn>
-    <a v-if="disabled" href="#/settings">Go to settings</a>  
+    <v-flex xs12 centered v-if="!isRunning">
+      <label>{{ processingMsg }}</label>
+    </v-flex>
+    <v-flex xs12 centered v-if="!isRunning">
+      <v-btn small outline @click="runRelay" v-if="!disabled">Run relay</v-btn>
+      <a href="#/settings" v-else>Go to settings</a>
+    </v-flex>
+    <v-flex xs12 v-if="isRunning">
+      relay info.
+    </v-flex>
   </v-layout>
 </template>
 
@@ -12,7 +19,8 @@
       return {
         processingMsg: '',
         blockInfo: '',
-        disabled: false
+        disabled: false,
+        isRunning: false
       }
     },
     mounted () {
@@ -23,6 +31,7 @@
     },
     methods: {
       runRelay () {
+        this.isRunning = true;
         /*
         const that = this;
         const spawn = require('child_process').spawn;

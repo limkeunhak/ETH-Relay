@@ -14,11 +14,11 @@
           <v-flex xs12 sm6 md4 class="body-1 mt-2">
             <div class="caption"><b>Modify Account ID</b></div>
           </v-flex>          
-          <v-flex xs9>
+          <v-flex xs8>
             <v-text-field class="caption" v-model="accountId"></v-text-field>
           </v-flex>          
-          <v-flex xs3>
-            <v-btn small color="info" @click="modifyAccount">Modify</v-btn>
+          <v-flex xs3 centered class="ml-auto">
+            <v-btn small outline @click="modifyAccount">Modify</v-btn>
           </v-flex>
         </v-layout>
       </v-card>  
