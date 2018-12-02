@@ -68,17 +68,12 @@
   .name
   {
     display: inline;
-    font-weight: 200;
-    font-size: 9px;
-    letter-spacing: 1px;
   }
 
   .value
   {
     display: inline;
     font-style: italic;
-    font-weight: 400;
-    font-size: 12px;
     padding-left: 5px;
   }
 </style>

@@ -1,41 +1,47 @@
 <template>
-  <v-layout column justify-center>
-    <v-flex>
-      <v-btn color="info" small @click="getBlockNumber">블록번호 가져오기</v-btn>
-      <blockquote class="text-xs-center">
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;John Johnson</em>
-            <v-btn color="info">검색</v-btn>
-            <em>&mdash;{{ blockInfo }}</em>
-          </small>
-        </footer>
-      </blockquote>
-    </v-flex>
+  <v-layout row wrap class="centered">
+    <label>{{ processingMsg }}</label>
+    <v-btn color="info" small @click="runRelay" :disabled="disabled">Run relay</v-btn>
+    <a v-if="disabled" href="#/settings">Go to settings</a>  
   </v-layout>
 </template>
 
 <script>
-  import relay from '../../relay/relay';
-
   export default {
     data () {
       return {
-        blockInfo: ''
+        processingMsg: '',
+        blockInfo: '',
+        disabled: false
+      }
+    },
+    mounted () {
+      if (this.$store.state.AccountStore.accountId === '') {
+        this.processingMsg = 'You must set your eos account to relay';
+        this.disabled = true;
       }
     },
     methods: {
-      getBlockNumber () {
-        let that = this;
-        this.blockInfo = '검색중..';
-        relay.getLastBlockNumber()
-        .then((result) => {
-             that.blockInfo = result.data;
-        }).catch((ex) => {
-            that.blockInfo = ex;
+      runRelay () {
+        /*
+        const that = this;
+        const spawn = require('child_process').spawn;
+        let fetchd = spawn('node', ['../../relay/relayd.js'])
+  
+        fetchd.stdout.on('data', function (data) {
+          that.blockInfo = data;
         });
+        */
       }
     }
   }
 </script>
+
+<style scoped>
+  .centered
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

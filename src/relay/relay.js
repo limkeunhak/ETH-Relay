@@ -2,7 +2,7 @@ const axios = require('axios');
 const utils = require('./utils');
 const config = require('../config/app.config');
 
-export default (() => {
+module.exports = (() => {
     return {
         isRunning: false,
         getBlockNumber: function () {
